@@ -46,7 +46,7 @@ conda env create -f environment.yml
   dataset_paths = {
     'CUHK_train_P': '/media/gpu/T7/HifiSketch/datasets/CUHK_train_Photo',
     'CUHK_train_S': '/media/gpu/T7/HifiSketch/datasets/CUHK_train_Sketch',
-	  'CUHK_test_P': '/media/gpu/T7/HifiSketch/datasets/CUHK_test_Photo',
+    'CUHK_test_P': '/media/gpu/T7/HifiSketch/datasets/CUHK_test_Photo',
     'CUHK_test_S': '/media/gpu/T7/HifiSketch/datasets/CUHK_test_Sketch',}
   ```
 * Update configs/data_conf.py like:
