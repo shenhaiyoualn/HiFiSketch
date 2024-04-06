@@ -83,7 +83,7 @@ CUDA_VISIBLE_DEVICES="0" python scripts/train.py \
 --output_size=1024 \
 --load_w_encoder
 ```
-You can modify the training parameters in the 'options/train_options.py' file.
+You can modify the training parameters in the `options/train_options.py` file.
 
 * inference the model
 
@@ -99,7 +99,7 @@ CUDA_VISIBLE_DEVICES="0" python scripts/inference.py \
 --w_encoder_checkpoint_path pretrained_models/faces_encoder.pt 
 ```
 and you can use '--save_weight_deltas' to save the final weight.
-You can find all the test parameters in the 'options/test_options.py' file.
+You can find all the test parameters in the `options/test_options.py` file.
 
 ### Editing
 # You can edit the generated image through text by：
