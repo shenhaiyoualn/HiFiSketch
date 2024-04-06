@@ -52,59 +52,78 @@ conda env create -f environment.yml
 * Update configs/data_conf.py like:
 
   ```
-DATASETS = {
+  DATASETS = {
 	'CUHK': {
 		'transforms': trans_conf.EncodeTransforms,
 		'train_source_root': dataset_paths['CUHK_train_P'],
 		'train_target_root': dataset_paths['CUHK_train_S'],
 		'test_source_root': dataset_paths['CUHK_test_P'],
 		'test_target_root': dataset_paths['CUHK_test_S'],
-	},
- }
+	},}
   ```
 
 
 
-### train/test
+### Training and Inference
 * Train a model
 
-  ```
-  python train.py --dataset_train_list train_sample.txt --dataset_test_list test_sample.txt   --name eadt
-  ```
+```
+CUDA_VISIBLE_DEVICES="0" python scripts/train.py \
+--dataset_type=CUHK \
+--encoder_type=hifinet \
+--exp=experiments/CUHK \
+--workers=1 \
+--batch_size=4 \
+--test_batch_size=2 \
+--test_workers=1 \
+--val_interval=5000 \
+--save_interval=5000 \
+--n_iters_per_batch=1 \
+--max_val_batches=150 \
+--output_size=1024 \
+--load_w_encoder
+```
 
-* Test the model
+* inference the model
 
-  ```
-  python test.py  --input_size 256  --checkpoint_dir /home/sd01/EADT/checkpoint/eadt.ckpt
-  ```
+```
+CUDA_VISIBLE_DEVICES="0" python scripts/inference.py \
+--exp=experiments/CUHK \
+--checkpoint_path=/model/path \
+--data_path=/your/test/data/path \
+--test_batch_size=4 \
+--test_workers=4 \
+--n_iters_per_batch=2 \
+--load_w_encoder \
+--w_encoder_checkpoint_path pretrained_models/faces_encoder.pt 
+```
+and you can use '--save_weight_deltas' to save the final weight.
+
+### Editing
+# You can edit the generated image through text by：
+
+```
+python editing/edit/edit.py \
+--exp /your/experiment/dir \
+--weight_deltas_path /your/weight_deltas \
+--neutral_text "a face" \
+--target_tex "a face with glasses"
+```
 
 
-### Preprocessing steps
-
-If you need to use your own data, please align all faces by eyes and the face parsing is segmented by [face-parsing](https://github.com/jehovahxu/face-parsing.PyTorch)
-
-
-## Citation
-
- If you use this code for your research, please cite our paper. 
-
-> Zhang, C., Liu, D., Peng, C., Wang, N., & Gao, X. (2022). Edge Aware Domain Transformation for Face Sketch Synthesis. IEEE Transactions on Information Forensics and Security, 17, 2761-2770. (Accepted)
 
 **bibtex:**
 
 ```latex
-@article{zhang2022edge,
-  title={Edge Aware Domain Transformation for Face Sketch Synthesis},
-  author={Zhang, Congyu and Liu, Decheng and Peng, Chunlei and Wang, Nannan and Gao, Xinbo},
-  journal={IEEE Transactions on Information Forensics and Security},
-  volume={17},
-  pages={2761--2770},
-  year={2022},
+@article{peng2023hifisketch,
+  title={HiFiSketch: High Fidelity Face Photo-Sketch Synthesis and Manipulation},
+  author={Peng, Chunlei and Zhang, Congyu and Liu, Decheng and Wang, Nannan and Gao, Xinbo},
+  journal={IEEE Transactions on Image Processing},
+  year={2023},
   publisher={IEEE}
 }
 ```
 
 ## Acknowledgments
 
-Our code is inspired by [GENRE](https://github.com/fei-hdu/genre) and [SPADE/GauGAN](https://github.com/NVlabs/SPADE).
-](https://github.com/shenhaiyoualn/HiFiSketch)
+Our code is inspired by [Hyperstyle](https://github.com/yuval-alaluf/hyperstyle) and [stylegan2](https://github.com/yuval-alaluf/hyperstyle)
