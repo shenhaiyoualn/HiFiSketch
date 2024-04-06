@@ -62,7 +62,7 @@ Our model uses a lot of pre-trained models, you can find them below：
 |[ResNet-34 Model](https://download.pytorch.org/models/resnet34-333f7ec4.pth) | ResNet-34 model trained on ImageNet taken from [torchvision](https://github.com/pytorch/vision/blob/master/torchvision/models/resnet.py).
 |[MTCNN](https://drive.google.com/file/d/1tJ7ih-wbCO6zc3JhI_1ZGjmwXKKaPlja/view?usp=sharing) | Weights for MTCNN model taken from [TreB1eN](https://github.com/TreB1eN/InsightFace_Pytorch) for use in ID similarity. 
 
-Please note that the generator we use is derived from rosinality's code[rosinality](https://github.com/rosinality/stylegan2-pytorch)。
+Please note that the generator we use is derived from [rosinality‘s](https://github.com/rosinality/stylegan2-pytorch) code.
 
 ### Training and Inference
 * Train a model
