@@ -1,19 +1,3 @@
-'''
-CUDA_VISIBLE_DEVICES="0" python scripts/inference.py \
---exp=experiments/CUHK \
---checkpoint_path=/media/gpu/T7/HifiSketch/experiments/CUHK/checkpoints/best_model.pt \
---data_path=/media/gpu/T7/HifiSketch/datasets/CUHK_test_Photo \
---test_batch_size=4 \
---test_workers=4 \
---n_iters_per_batch=2 \
---load_w_encoder \
---w_encoder_checkpoint_path pretrained_models/faces_encoder.pt \
---save_weight_deltas
-'''
-
-
-
-
 import os
 
 from tqdm import tqdm
