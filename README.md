@@ -1,4 +1,4 @@
-# HiFiSketch
+[# HiFiSketch
 
   We provide `PyTorch` implementations for our TIP2023 paper [`HifiSketch`]([https://ieeexplore.ieee.org/abstract/document/9845477]): 
 
@@ -108,3 +108,4 @@ If you need to use your own data, please align all faces by eyes and the face pa
 ## Acknowledgments
 
 Our code is inspired by [GENRE](https://github.com/fei-hdu/genre) and [SPADE/GauGAN](https://github.com/NVlabs/SPADE).
+](https://github.com/shenhaiyoualn/HiFiSketch)
