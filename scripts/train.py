@@ -1,21 +1,3 @@
-"""
-
-CUDA_VISIBLE_DEVICES="1" python scripts/train.py \
---dataset_type=CUHK \
---encoder_type=hifinet \
---exp=experiments/CUHK \
---workers=1 \
---batch_size=4 \
---test_batch_size=2 \
---test_workers=1 \
---val_interval=5000 \
---save_interval=5000 \
---n_iters_per_batch=1 \
---max_val_batches=150 \
---output_size=1024 \
---load_w_encoder
-"""
-
 import json
 import os
 import sys
