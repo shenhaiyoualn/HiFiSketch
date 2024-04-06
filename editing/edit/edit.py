@@ -1,10 +1,3 @@
-'''
-python editing/edit/edit.py \
---exp /media/gpu/T7/HifiSketch/experiments/CUHK \
---weight_deltas_path /media/gpu/T7/HifiSketch/experiments/CUHK/weight_deltas \
---neutral_text "a face" \
---target_tex "a face with glasses"
-'''
 import argparse
 import os
 import pickle
