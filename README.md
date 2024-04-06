@@ -1,4 +1,4 @@
-[# HiFiSketch
+# HiFiSketch
 
   We provide `PyTorch` implementations for our TIP2023 paper [`HifiSketch`]([https://ieeexplore.ieee.org/abstract/document/9845477]): 
 
@@ -50,7 +50,6 @@ conda env create -f environment.yml
     'CUHK_test_S': '/media/gpu/T7/HifiSketch/datasets/CUHK_test_Sketch',}
   ```
 * Update configs/data_conf.py like:
-  DATASETS = {
 
   ```
 DATASETS = {
