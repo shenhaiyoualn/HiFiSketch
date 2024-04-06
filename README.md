@@ -94,7 +94,7 @@ CUDA_VISIBLE_DEVICES="0" python scripts/inference.py \
 --data_path=/your/test/data/path \
 --test_batch_size=4 \
 --test_workers=4 \
---n_iters_per_batch=2 \
+--n_iters_per_batch=1 \
 --load_w_encoder \
 --w_encoder_checkpoint_path pretrained_models/faces_encoder.pt 
 ```
