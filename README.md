@@ -1,6 +1,6 @@
 # HiFiSketch
 
-  We provide `PyTorch` implementations for our TIP2023 paper [`HifiSketch`]([https://ieeexplore.ieee.org/abstract/document/9845477]): 
+  We provide `PyTorch` implementations for our TIP2023 paper [`HifiSketch`]([https://ieeexplore.ieee.org/abstract/document/9845477]): High Fidelity Face Photo-Sketch Synthesis and Manipulation
 
 
 This project can generate face sketch from photos and edit the composite portrait using text.
