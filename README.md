@@ -102,7 +102,7 @@ and you can use '--save_weight_deltas' to save the final weight.
 You can find all the test parameters in the `options/test_options.py` file.
 
 ### Editing
-# You can edit the generated image through text by：
+#### You can edit the generated image through text by：
 
 ```
 python editing/edit/edit.py \
