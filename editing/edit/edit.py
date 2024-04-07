@@ -24,7 +24,7 @@ def parse_args():
                         help="Maximum number of images to edit. If None, edit all images.")
     parser.add_argument("--neutral_text", type=str, default="face with hair")
     parser.add_argument("--target_text", type=str, default="face with long hair")
-    parser.add_argument("--stylegan_weights", type=str, default=model_paths["stylegan_ffhq"])
+    parser.add_argument("--stylegan_weights", type=str, default=model_paths["stylegan"])
     parser.add_argument("--stylegan_size", type=int, default=1024)
     parser.add_argument("--stylegan_truncation", type=int, default=1.)
     parser.add_argument("--stylegan_truncation_mean", type=int, default=4096)
