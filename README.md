@@ -98,7 +98,7 @@ CUDA_VISIBLE_DEVICES="0" python scripts/inference.py \
 --load_w_encoder \
 --w_encoder_checkpoint_path pretrained_models/faces_encoder.pt 
 ```
-You can use '--save_weight_deltas' to save the final weight and adjust the '--n_iters_per_batch' parameters to get more realistic effects.
+You can use `--save_weight_deltas` to save the final weight and adjust the `--n_iters_per_batch` parameters to get more realistic effects.
 You can find all the test parameters in the `options/test_options.py` file.
 
 ### Editing
